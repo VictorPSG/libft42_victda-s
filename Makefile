@@ -1,18 +1,24 @@
 NAME = libft.a
 
 SRC = ft_isalpha.c \
-	ft_isdigit.c
+	ft_isdigit.c \
+	ft_isalnum.c \
+	ft_isascii.c \
+
+OBJ = $(SRC:.c=.o)
 
 FLAGS = -Wall -Wextra -Werror
 
-all : $(NAME)
+all: $(NAME)
 
-$(NAME):
-	gcc -c $(FLAGS) -o $(NAME) $(SRC)
-	gcc -c $(FLAGS) $(SRC)
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
+
+%.o: %.c
+	gcc -c $(FLAGS) $< -o $@
 
 clean:
-	/bin/rm -f ft_display_file.o
+	/bin/rm -f $(OBJ)
 
 fclean: clean
 	/bin/rm -f $(NAME)
