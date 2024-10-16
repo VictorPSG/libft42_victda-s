@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 15:17:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/16 13:55:03 by victda-s         ###   ########.fr       */
+/*   Created: 2024/10/15 22:34:50 by victda-s          #+#    #+#             */
+/*   Updated: 2024/10/16 12:22:09 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-int		ft_isalpha(char c);
-int		ft_isdigit(int c);
-int		ft_isalnum(char c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-int		ft_strlen(char *str);
-void	ft_bzero(void *s, int n);
-void	*ft_memset(void *ptr, int value, int num);
-void	*ft_memcpy(void *dest, void *src, int n);
+void	*ft_memcpy(void *dest, void *src, int n)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
+	return (dest);
+}

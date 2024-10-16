@@ -6,17 +6,17 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 20:28:34 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/15 20:56:29 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/15 22:02:39 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, int n)
 {
 	int	i;
 
 	i = 0;
-	while ((size_t)i < n)
+	while (i < n)
 		((unsigned char *)s)[i++] = '\0';
 }
