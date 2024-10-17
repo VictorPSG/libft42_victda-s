@@ -6,15 +6,15 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 20:28:34 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/15 22:02:39 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/17 15:02:42 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, int n)
+void	ft_bzero(void *s, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < n)
