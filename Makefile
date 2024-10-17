@@ -13,6 +13,7 @@ SRC = ft_isalpha.c \
 	ft_tolower.c \
 	ft_strlcpy.c \
 	ft_strlcat.c \
+	ft_strncmp.c \
 
 OBJ = $(SRC:.c=.o)
 
