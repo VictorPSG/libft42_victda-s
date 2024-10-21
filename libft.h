@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:17:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/21 17:44:51 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/21 19:50:00 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memset(void *ptr, int value, size_t num);
 void	*ft_memcpy(void *dest, void *src, size_t n);
 void	*ft_memmove(void *dest, void *src, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
