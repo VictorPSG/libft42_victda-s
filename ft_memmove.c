@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 13:59:22 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/17 14:54:58 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/21 20:59:06 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <stdio.h>
 #include <string.h>
 
-void	*ft_memmove(void *dest, void *src, int n)
+void	*ft_memmove(void *dest, void *src, size_t n)
 {
-	int	i;
-	int	lenght;
+	size_t	i;
+	size_t	lenght;
 
 	i = 0;
 	lenght = 0;
@@ -28,7 +28,9 @@ void	*ft_memmove(void *dest, void *src, int n)
 		while (n > 0)
 		{
 			lenght = strlen(src);
-			((unsigned char *)dest)[i++] = ((unsigned char *)src)[i++];
+			((unsigned char *)dest)[n - 1] = ((unsigned char *)src)[n - 1];
+			i++;
+			n--;
 		}
 	}
 	return (dest);
@@ -45,9 +47,8 @@ int	main(void)
 		// Movendo os primeiros 5 caracteres para a posição a partir do índice 3
 	memmove(teste1 + 3, teste1, 5);  // Corrigido para usar memmove
 	// Imprimindo o resultado
-	printf("%s\n", teste);  // Saída esperada: "ABCABCDEI"
-	printf("%s\n", teste1); // Saída esperada: "ABCABCDEI"
+	printf("ft: %s\n", teste);  // Saída esperada: "ABCABCDEI"
+	printf("    %s\n", teste1); // Saída esperada: "ABCABCDEI"
 	return (0);
 }
-
 */
