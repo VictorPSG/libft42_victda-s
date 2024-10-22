@@ -22,6 +22,7 @@ SRC = ft_isalpha.c \
 	ft_calloc.c \
 	ft_strdup.c \
 	ft_memchr.c \
+	ft_putchar_fd.c \
 
 OBJ = $(SRC:.c=.o)
 
