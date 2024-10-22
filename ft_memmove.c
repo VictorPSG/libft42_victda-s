@@ -6,13 +6,11 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 13:59:22 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/21 20:59:06 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/22 15:24:30 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 void	*ft_memmove(void *dest, void *src, size_t n)
 {
@@ -27,7 +25,7 @@ void	*ft_memmove(void *dest, void *src, size_t n)
 	{
 		while (n > 0)
 		{
-			lenght = strlen(src);
+			lenght = ft_strlen(src);
 			((unsigned char *)dest)[n - 1] = ((unsigned char *)src)[n - 1];
 			i++;
 			n--;
