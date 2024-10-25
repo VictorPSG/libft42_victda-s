@@ -29,7 +29,8 @@ SRC = ft_isalpha.c \
 	ft_substr.c \
 	ft_strjoin.c \
 	ft_striteri.c \
-	ft_strmapi.c
+	ft_strmapi.c \
+	ft_strtrim.c \
 
 OBJ = $(SRC:.c=.o)
 
@@ -41,7 +42,7 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
-	gcc -c $(FLAGS) $< -o $@
+	cc -c $(FLAGS) $< -o $@
 
 clean:
 	/bin/rm -f $(OBJ)
