@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 15:17:37 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/28 19:51:51 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/28 23:11:08 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-int		ft_isalpha(char c);
+int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(char c);
 int		ft_isascii(int c);
