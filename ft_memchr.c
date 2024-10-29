@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victor <victor@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 19:35:54 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/21 20:46:58 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/29 01:48:19 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,15 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	lenght = ft_strlen(s) - 1;
 	if (c == '\0')
-		return ((char *)&s[lenght]);
+		return ((char *)s + lenght);
 	while (i < n && ((unsigned char *) s)[i] != (unsigned char) c)
 	{
 		i++;
 		if (i == n)
 			return (NULL);
 	}
-	return ((void *)&s[i]);
+	return ((void *)((unsigned char *)s + i));
+
 }
 /*
 #include <stdio.h>

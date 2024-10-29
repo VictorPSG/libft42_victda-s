@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victor <victor@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 21:08:40 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/21 16:26:25 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/29 01:42:42 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
 	int	lenght;
 
-	i = 0;
 	lenght = ft_strlen(s);
 	if (c == '\0')
 	{

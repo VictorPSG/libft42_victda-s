@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victda-s <victda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 13:59:22 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/22 15:24:30 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/29 10:48:55 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 	size_t	lenght;
