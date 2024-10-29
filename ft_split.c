@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victor <victor@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:53:32 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/28 23:15:57 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/29 01:48:49 by victor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ static void free_split(char **split, int	len)
 static char **split_alloc(int num_str)
 {
 	char		**split;
-	int		i;
 
-	i = 0;
 	if(!(split = (char **)malloc(num_str * sizeof(char *))))
 		return (NULL);
 	return (split);
