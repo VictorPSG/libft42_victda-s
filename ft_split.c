@@ -6,29 +6,31 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:53:32 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/29 15:46:55 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/29 22:25:24 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void free_split(char **split, int	len)
+static void	free_split(char **split, int len)
 {
 	int	i;
 
 	i = 0;
-	while(i < len)
+	while (i < len)
 		free(split[i++]);
 	free(split);
 }
-static char **split_alloc(int num_str)
-{
-	char		**split;
 
-	if(!(split = (char **)malloc(num_str * sizeof(char *))))
+static char	**split_alloc(int num_str)
+{
+	char	**split;
+
+	if (!(split = (char **)malloc(num_str * sizeof(char *))))
 		return (NULL);
 	return (split);
 }
+
 int	count_words(const char *s, char c)
 {
 	int	i;
@@ -49,6 +51,7 @@ int	count_words(const char *s, char c)
 	}
 	return (count);
 }
+
 static char	**split_str(const char *s, char c, char **split)
 {
 	int	count;
@@ -60,34 +63,33 @@ static char	**split_str(const char *s, char c, char **split)
 	start = 0;
 	end = 0;
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		start = i;
-		if(s[i] == c)
-			i++;
-		else
-		{
-			count++;
-			while(s[i] && s[i] != c)
-				i++;
-			end = i;
-			split[count - 1] = ft_substr(s, start, end - start);
-			if(!split[count - 1])
+		if (s[i++] == c)
+			else
 			{
-				free_split(split, count -1 );
-				return (NULL);
+				count++;
+				while (s[i] && s[i] != c)
+					i++;
+				end = i;
+				split[count - 1] = ft_substr(s, start, end - start);
+				if (!split[count - 1])
+					free_split(split, count - 1);
 			}
-		}
 	}
 	return (split);
 }
+
 char	**ft_split(char const *s, char c)
 {
-	if(!s)
+	char	**split;
+
+	if (!s)
 		return (NULL);
-	char **split = split_alloc(count_words(s, c) + 1);
+	split = split_alloc(count_words(s, c) + 1);
 	if (!split)
-       	return (NULL);
+		return (NULL);
 	split_str(s, c, split);
 	split[count_words(s, c)] = NULL;
 	return (split);
@@ -102,7 +104,7 @@ char	**ft_split(char const *s, char c)
 //     char **result = ft_split(str, delimiter);
 //     if (!result) {
 //         printf("Erro na alocação de memória.\n");
-//         return 1;
+//         return (1);
 //     }
 
 //     // Imprime as substrings
@@ -115,5 +117,5 @@ char	**ft_split(char const *s, char c)
 //     }
 
 //     free(result);  // Libera o array de ponteiros
-//     return 0;
+//     return (0);
 // }
