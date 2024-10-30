@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 18:25:03 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/18 19:27:31 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/29 21:35:50 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,22 @@ char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 	int	lenght;
+	unsigned char cc;
 
 	i = 0;
 	lenght = ft_strlen(s);
-	if (c == '\0')
+	cc = (unsigned char)c;
+	if (cc == '\0')
 		return ((char *)&s[lenght]);
-	while (s[i] && s[i] != c)
+	while (s[i] && s[i] != cc)
 	{
 		i++;
 		if (i == lenght)
 			return (NULL);
 	}
-	return ((char *)&s[i]);
+	if(s[i] == cc)
+		return ((char *)&s[i]);
+	return (NULL);
 }
 /*
 int main() {

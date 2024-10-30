@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/04 16:12:11 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/22 18:50:39 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/29 22:09:04 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ void	ft_putnbr_fd(int nb, int fd)
 	int	i;
 
 	i = 0;
+	if (fd < 0)
+		return ;
 	if (nb < 0)
 	{
 		write(fd, "-", 1);
 		if (nb == -2147483648)
 		{
 			array_num[i++] = '8';
-			nb = nb / 10;
+			nb = -214748364;
 		}
 		nb = -nb;
 	}
@@ -35,9 +37,7 @@ void	ft_putnbr_fd(int nb, int fd)
 	}
 	array_num[i++] = '0' + nb;
 	while (i > 0)
-	{
 		write(fd, &array_num[--i], 1);
-	}
 }
 // int	main(void)
 // {
