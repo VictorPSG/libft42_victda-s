@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 13:59:22 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/29 18:51:07 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/29 22:15:50 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	if(!src && !dest)
+	if (!src && !dest)
 		return (NULL);
 	if (dest < src)
 		ft_memcpy(dest, src, n);

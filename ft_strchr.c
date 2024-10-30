@@ -6,7 +6,7 @@
 /*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/18 18:25:03 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/29 21:35:50 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/29 22:16:15 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-	int	lenght;
-	unsigned char cc;
+	int				i;
+	int				lenght;
+	unsigned char	cc;
 
 	i = 0;
 	lenght = ft_strlen(s);
@@ -29,24 +29,24 @@ char	*ft_strchr(const char *s, int c)
 		if (i == lenght)
 			return (NULL);
 	}
-	if(s[i] == cc)
+	if (s[i] == cc)
 		return ((char *)&s[i]);
 	return (NULL);
 }
 /*
-int main() {
-    char str[] = "bonjor";
-    char *ptr;
+int	main(void) {
+	char str[] = "bonjor";
+	char *ptr;
 
-    // Procurando a primeira ocorrência da letra 'W'
-    ptr = ft_strchr(str, '\0');
+	// Procurando a primeira ocorrência da letra 'W'
+	ptr = ft_strchr(str, '\0');
 
-    if (ptr != NULL) {
-        printf("A primeira ocorrência de 'W' está em: %s\n", ptr);
-    } else {
-        printf("'W' não encontrado na string.\n");
-    }
+	if (ptr != NULL) {
+		printf("A primeira ocorrência de 'W' está em: %s\n", ptr);
+	} else {
+		printf("'W' não encontrado na string.\n");
+	}
 
-    return (0);
+	return (0);
 }
 */
