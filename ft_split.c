@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: victda-s <victda-s@student.42.fr>          +#+  +:+       +#+        */
+/*   By: victda-s <victda-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 15:53:32 by victda-s          #+#    #+#             */
-/*   Updated: 2024/10/29 22:25:24 by victda-s         ###   ########.fr       */
+/*   Updated: 2024/10/30 00:00:07 by victda-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ static char	**split_alloc(int num_str)
 {
 	char	**split;
 
-	if (!(split = (char **)malloc(num_str * sizeof(char *))))
+	split = (char **)malloc(num_str * sizeof(char *));
+	if (!split)
 		return (NULL);
 	return (split);
 }
@@ -61,22 +62,22 @@ static char	**split_str(const char *s, char c, char **split)
 
 	count = 0;
 	start = 0;
-	end = 0;
 	i = 0;
 	while (s[i])
 	{
 		start = i;
-		if (s[i++] == c)
-			else
-			{
-				count++;
-				while (s[i] && s[i] != c)
-					i++;
-				end = i;
-				split[count - 1] = ft_substr(s, start, end - start);
-				if (!split[count - 1])
-					free_split(split, count - 1);
-			}
+		if (s[i] == c)
+			i++;
+		else
+		{
+			count++;
+			while (s[i] && s[i] != c)
+				i++;
+			end = i;
+			split[count - 1] = ft_substr(s, start, end - start);
+			if (!split[count - 1])
+				free_split(split, count - 1);
+		}
 	}
 	return (split);
 }
